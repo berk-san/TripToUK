@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7682AB291F4D3A8C5B13DB19 /* Pods_TripToUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF521E3B57CC2210050215A2 /* Pods_TripToUK.framework */; };
+		C00C48F8290F7F940080F12F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C48F7290F7F940080F12F /* AppDelegate.swift */; };
+		C00C48FA290F7F940080F12F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C48F9290F7F940080F12F /* SceneDelegate.swift */; };
+		C00C48FC290F7F940080F12F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C48FB290F7F940080F12F /* SignUpVC.swift */; };
+		C00C48FF290F7F940080F12F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00C48FD290F7F940080F12F /* Main.storyboard */; };
+		C00C4901290F7F950080F12F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00C4900290F7F950080F12F /* Assets.xcassets */; };
+		C00C4904290F7F950080F12F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00C4902290F7F950080F12F /* LaunchScreen.storyboard */; };
+		C00C490C290F81AB0080F12F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C00C490B290F81AB0080F12F /* GoogleService-Info.plist */; };
+		C00C490E290F89440080F12F /* SignUpVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C490D290F89440080F12F /* SignUpVCViewController.swift */; };
+		C08E39BE2910D4E400A80F51 /* MainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08E39BD2910D4E400A80F51 /* MainPageVC.swift */; };
+		C0DA9A7D29117D7700B2DC10 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA9A7C29117D7700B2DC10 /* AddPlaceVC.swift */; };
+		C0DA9A7F291180DE00B2DC10 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA9A7E291180DE00B2DC10 /* MapVC.swift */; };
+		C0DA9A812911893400B2DC10 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA9A802911893400B2DC10 /* DetailsVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4146B5D465D4356043294DA6 /* Pods-TripToUK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripToUK.debug.xcconfig"; path = "Target Support Files/Pods-TripToUK/Pods-TripToUK.debug.xcconfig"; sourceTree = "<group>"; };
+		C00C48F4290F7F940080F12F /* TripToUK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripToUK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00C48F7290F7F940080F12F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C00C48F9290F7F940080F12F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C00C48FB290F7F940080F12F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		C00C48FE290F7F940080F12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C00C4900290F7F950080F12F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C00C4903290F7F950080F12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C00C4905290F7F950080F12F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C00C490B290F81AB0080F12F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C00C490D290F89440080F12F /* SignUpVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVCViewController.swift; sourceTree = "<group>"; };
+		C08E39BD2910D4E400A80F51 /* MainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageVC.swift; sourceTree = "<group>"; };
+		C0DA9A7C29117D7700B2DC10 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
+		C0DA9A7E291180DE00B2DC10 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		C0DA9A802911893400B2DC10 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		EF521E3B57CC2210050215A2 /* Pods_TripToUK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripToUK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72B5C271E8EC59FD37F37A6 /* Pods-TripToUK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripToUK.release.xcconfig"; path = "Target Support Files/Pods-TripToUK/Pods-TripToUK.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C00C48F1290F7F940080F12F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7682AB291F4D3A8C5B13DB19 /* Pods_TripToUK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2971D77248AA277CBD347C52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF521E3B57CC2210050215A2 /* Pods_TripToUK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C00C48EB290F7F940080F12F = {
+			isa = PBXGroup;
+			children = (
+				C00C48F6290F7F940080F12F /* TripToUK */,
+				C00C48F5290F7F940080F12F /* Products */,
+				E45B1CB6E0108A68B9E8DEB1 /* Pods */,
+				2971D77248AA277CBD347C52 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C00C48F5290F7F940080F12F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C00C48F4290F7F940080F12F /* TripToUK.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C00C48F6290F7F940080F12F /* TripToUK */ = {
+			isa = PBXGroup;
+			children = (
+				C00C48F7290F7F940080F12F /* AppDelegate.swift */,
+				C00C48F9290F7F940080F12F /* SceneDelegate.swift */,
+				C00C48FB290F7F940080F12F /* SignUpVC.swift */,
+				C00C490D290F89440080F12F /* SignUpVCViewController.swift */,
+				C08E39BD2910D4E400A80F51 /* MainPageVC.swift */,
+				C0DA9A7C29117D7700B2DC10 /* AddPlaceVC.swift */,
+				C0DA9A7E291180DE00B2DC10 /* MapVC.swift */,
+				C0DA9A802911893400B2DC10 /* DetailsVC.swift */,
+				C00C48FD290F7F940080F12F /* Main.storyboard */,
+				C00C4900290F7F950080F12F /* Assets.xcassets */,
+				C00C4902290F7F950080F12F /* LaunchScreen.storyboard */,
+				C00C4905290F7F950080F12F /* Info.plist */,
+				C00C490B290F81AB0080F12F /* GoogleService-Info.plist */,
+			);
+			path = TripToUK;
+			sourceTree = "<group>";
+		};
+		E45B1CB6E0108A68B9E8DEB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4146B5D465D4356043294DA6 /* Pods-TripToUK.debug.xcconfig */,
+				F72B5C271E8EC59FD37F37A6 /* Pods-TripToUK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C00C48F3290F7F940080F12F /* TripToUK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C00C4908290F7F950080F12F /* Build configuration list for PBXNativeTarget "TripToUK" */;
+			buildPhases = (
+				DE4EEC4C71BCA48DC1581024 /* [CP] Check Pods Manifest.lock */,
+				C00C48F0290F7F940080F12F /* Sources */,
+				C00C48F1290F7F940080F12F /* Frameworks */,
+				C00C48F2290F7F940080F12F /* Resources */,
+				FB75D9143433872B321A3822 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TripToUK;
+			productName = TripToUK;
+			productReference = C00C48F4290F7F940080F12F /* TripToUK.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C00C48EC290F7F940080F12F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					C00C48F3290F7F940080F12F = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = C00C48EF290F7F940080F12F /* Build configuration list for PBXProject "TripToUK" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C00C48EB290F7F940080F12F;
+			productRefGroup = C00C48F5290F7F940080F12F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C00C48F3290F7F940080F12F /* TripToUK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C00C48F2290F7F940080F12F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C00C4904290F7F950080F12F /* LaunchScreen.storyboard in Resources */,
+				C00C490C290F81AB0080F12F /* GoogleService-Info.plist in Resources */,
+				C00C4901290F7F950080F12F /* Assets.xcassets in Resources */,
+				C00C48FF290F7F940080F12F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE4EEC4C71BCA48DC1581024 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripToUK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB75D9143433872B321A3822 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripToUK/Pods-TripToUK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripToUK/Pods-TripToUK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TripToUK/Pods-TripToUK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C00C48F0290F7F940080F12F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DA9A7D29117D7700B2DC10 /* AddPlaceVC.swift in Sources */,
+				C0DA9A812911893400B2DC10 /* DetailsVC.swift in Sources */,
+				C00C48FC290F7F940080F12F /* SignUpVC.swift in Sources */,
+				C08E39BE2910D4E400A80F51 /* MainPageVC.swift in Sources */,
+				C00C490E290F89440080F12F /* SignUpVCViewController.swift in Sources */,
+				C0DA9A7F291180DE00B2DC10 /* MapVC.swift in Sources */,
+				C00C48F8290F7F940080F12F /* AppDelegate.swift in Sources */,
+				C00C48FA290F7F940080F12F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C00C48FD290F7F940080F12F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C00C48FE290F7F940080F12F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C00C4902290F7F950080F12F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C00C4903290F7F950080F12F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C00C4906290F7F950080F12F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C00C4907290F7F950080F12F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C00C4909290F7F950080F12F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4146B5D465D4356043294DA6 /* Pods-TripToUK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H3LG7777TR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripToUK/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berksan.TripToUK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C00C490A290F7F950080F12F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F72B5C271E8EC59FD37F37A6 /* Pods-TripToUK.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H3LG7777TR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripToUK/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berksan.TripToUK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C00C48EF290F7F940080F12F /* Build configuration list for PBXProject "TripToUK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C00C4906290F7F950080F12F /* Debug */,
+				C00C4907290F7F950080F12F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C00C4908290F7F950080F12F /* Build configuration list for PBXNativeTarget "TripToUK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C00C4909290F7F950080F12F /* Debug */,
+				C00C490A290F7F950080F12F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C00C48EC290F7F940080F12F /* Project object */;
+}
