@@ -34,19 +34,27 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         imageView.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func nextButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toMapVC", sender: nil)
+        
+        if placeNameText.text != "" && placeTypeText.text != "" && famousForText.text != "" {
+            if let selectedImage = imageView.image {
+                let placeModel = PlaceModel.sharedInstance
+                placeModel.placeName = placeNameText.text!
+                placeModel.placeType = placeTypeText.text!
+                placeModel.highlights = famousForText.text!
+                placeModel.placeImage = selectedImage
+            }
+            performSegue(withIdentifier: "toMapVC", sender: nil)
+        } else {
+            showAlert(titleInput: "Error", messageInput: "Place couldn't added")
+        }
+    }
+    
+    func showAlert(titleInput: String, messageInput: String) {
+        let ac = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        ac.addAction(okButton)
+        self.present(ac, animated: true)
     }
 }

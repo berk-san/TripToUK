@@ -10,7 +10,7 @@
 		7682AB291F4D3A8C5B13DB19 /* Pods_TripToUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF521E3B57CC2210050215A2 /* Pods_TripToUK.framework */; };
 		C00C48F8290F7F940080F12F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C48F7290F7F940080F12F /* AppDelegate.swift */; };
 		C00C48FA290F7F940080F12F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C48F9290F7F940080F12F /* SceneDelegate.swift */; };
-		C00C48FC290F7F940080F12F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C48FB290F7F940080F12F /* SignUpVC.swift */; };
+		C00C48FC290F7F940080F12F /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00C48FB290F7F940080F12F /* SignInVC.swift */; };
 		C00C48FF290F7F940080F12F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00C48FD290F7F940080F12F /* Main.storyboard */; };
 		C00C4901290F7F950080F12F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00C4900290F7F950080F12F /* Assets.xcassets */; };
 		C00C4904290F7F950080F12F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00C4902290F7F950080F12F /* LaunchScreen.storyboard */; };
@@ -20,6 +20,7 @@
 		C0DA9A7D29117D7700B2DC10 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA9A7C29117D7700B2DC10 /* AddPlaceVC.swift */; };
 		C0DA9A7F291180DE00B2DC10 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA9A7E291180DE00B2DC10 /* MapVC.swift */; };
 		C0DA9A812911893400B2DC10 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA9A802911893400B2DC10 /* DetailsVC.swift */; };
+		C0DA9A832911964A00B2DC10 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA9A822911964A00B2DC10 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,7 @@
 		C00C48F4290F7F940080F12F /* TripToUK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripToUK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00C48F7290F7F940080F12F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C00C48F9290F7F940080F12F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C00C48FB290F7F940080F12F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		C00C48FB290F7F940080F12F /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		C00C48FE290F7F940080F12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C00C4900290F7F950080F12F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C00C4903290F7F950080F12F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		C0DA9A7C29117D7700B2DC10 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		C0DA9A7E291180DE00B2DC10 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		C0DA9A802911893400B2DC10 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		C0DA9A822911964A00B2DC10 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		EF521E3B57CC2210050215A2 /* Pods_TripToUK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripToUK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72B5C271E8EC59FD37F37A6 /* Pods-TripToUK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripToUK.release.xcconfig"; path = "Target Support Files/Pods-TripToUK/Pods-TripToUK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,12 +87,13 @@
 			children = (
 				C00C48F7290F7F940080F12F /* AppDelegate.swift */,
 				C00C48F9290F7F940080F12F /* SceneDelegate.swift */,
-				C00C48FB290F7F940080F12F /* SignUpVC.swift */,
+				C00C48FB290F7F940080F12F /* SignInVC.swift */,
 				C00C490D290F89440080F12F /* SignUpVCViewController.swift */,
 				C08E39BD2910D4E400A80F51 /* MainPageVC.swift */,
 				C0DA9A7C29117D7700B2DC10 /* AddPlaceVC.swift */,
 				C0DA9A7E291180DE00B2DC10 /* MapVC.swift */,
 				C0DA9A802911893400B2DC10 /* DetailsVC.swift */,
+				C0DA9A822911964A00B2DC10 /* PlaceModel.swift */,
 				C00C48FD290F7F940080F12F /* Main.storyboard */,
 				C00C4900290F7F950080F12F /* Assets.xcassets */,
 				C00C4902290F7F950080F12F /* LaunchScreen.storyboard */,
@@ -227,11 +230,12 @@
 			files = (
 				C0DA9A7D29117D7700B2DC10 /* AddPlaceVC.swift in Sources */,
 				C0DA9A812911893400B2DC10 /* DetailsVC.swift in Sources */,
-				C00C48FC290F7F940080F12F /* SignUpVC.swift in Sources */,
+				C00C48FC290F7F940080F12F /* SignInVC.swift in Sources */,
 				C08E39BE2910D4E400A80F51 /* MainPageVC.swift in Sources */,
 				C00C490E290F89440080F12F /* SignUpVCViewController.swift in Sources */,
 				C0DA9A7F291180DE00B2DC10 /* MapVC.swift in Sources */,
 				C00C48F8290F7F940080F12F /* AppDelegate.swift in Sources */,
+				C0DA9A832911964A00B2DC10 /* PlaceModel.swift in Sources */,
 				C00C48FA290F7F940080F12F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
