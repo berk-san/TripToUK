@@ -34,6 +34,10 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var chosenLatitude = Double()
     var chosenLongitude = Double()
     
+    lazy var searchBar: UISearchBar = UISearchBar()
+    var searchPlace = [String]()
+    var searching = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +51,15 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         getDataFromFirebase()
         
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = "Search...."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+        
     }
+    
     
     func getDataFromFirebase() {
         
@@ -93,7 +105,7 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         self.highlightsArray.append(highlights)
                     }
                     
-                    if let placeLatitude = document.get("placeLatitude ") as? String {
+                    if let placeLatitude = document.get("placeLatitude") as? String {
                         if let placeLatitudeDouble = Double(placeLatitude) {
                             self.latitudeArray.append(placeLatitudeDouble)
                         }
@@ -118,15 +130,37 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return placeIDArray.count
+        
+        if searching {
+            return searchPlace.count
+        } else {
+            return placeIDArray.count
+        }
+//        return placeIDArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var content = cell.defaultContentConfiguration()
-        content.text = placeNameArray[indexPath.row]
+        
+        if searching {
+            content.text = searchPlace[indexPath.row]
+        } else {
+            content.text = placeNameArray[indexPath.row]
+        }
+//        content.text = placeNameArray[indexPath.row]
         content.secondaryText = "Added by: \(userArray[indexPath.row])"
         content.image = UIImage(named: "select.png")
+//        content.image?.draw(in: CGRect(x: 2, y: 2, width: 2, height: 2))
+        content.imageProperties.maximumSize = CGSize(width: 100, height: 100)
+        
+        if let url = URL(string: pictureArray[indexPath.row]) {
+            if let data = try? Data(contentsOf: url) {
+                if let newImage = UIImage(data: data) {
+                    content.image = newImage
+                }
+            }
+        }
         content.imageProperties.cornerRadius = 10
         content.imageToTextPadding = 20
         content.prefersSideBySideTextAndSecondaryText = false
@@ -178,4 +212,12 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
 
+}
+
+extension MainPageVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchPlace = placeNameArray.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searching = true
+        tableView.reloadData()
+    }
 }
