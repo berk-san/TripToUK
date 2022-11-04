@@ -25,7 +25,9 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var highlightsArray = [String]()
     var latitudeArray = [Double]()
     var longitudeArray = [Double]()
+    var filteredNames = [String]()
     
+    @IBOutlet var searchBar: UISearchBar!
     var chosenPlaceID = ""
     var chosenPlaceName = ""
     var chosenPlaceType = ""
@@ -34,8 +36,8 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var chosenLatitude = Double()
     var chosenLongitude = Double()
     
-    lazy var searchBar: UISearchBar = UISearchBar()
-    var searchPlace = [String]()
+//    lazy var searchBar: UISearchBar = UISearchBar()
+//    var searchPlace = [String]()
     var searching = false
     
     override func viewDidLoad() {
@@ -51,12 +53,14 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         getDataFromFirebase()
         
-        searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = "Search...."
-        searchBar.sizeToFit()
-        searchBar.isTranslucent = false
+//        searchBar.searchBarStyle = UISearchBar.Style.default
+//        searchBar.placeholder = "Search...."
+//        searchBar.sizeToFit()
+//        searchBar.isTranslucent = false
         searchBar.delegate = self
-        navigationItem.titleView = searchBar
+//        navigationItem.titleView = searchBar
+        
+        filteredNames = placeNameArray
         
     }
     
@@ -130,9 +134,9 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+//        return filteredNames.count
         if searching {
-            return searchPlace.count
+            return filteredNames.count
         } else {
             return placeIDArray.count
         }
@@ -143,8 +147,10 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell()
         var content = cell.defaultContentConfiguration()
         
+//        content.text = filteredNames[indexPath.row]
+        
         if searching {
-            content.text = searchPlace[indexPath.row]
+            content.text = filteredNames[indexPath.row]
         } else {
             content.text = placeNameArray[indexPath.row]
         }
@@ -216,8 +222,22 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 extension MainPageVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchPlace = placeNameArray.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        
+        filteredNames = []
+        
+        if searchText == "" {
+            filteredNames = placeNameArray
+        }
+        
+        for word in placeNameArray {
+            if word.lowercased().contains(searchText.lowercased()) {
+                filteredNames.append(word)
+            }
+        }
         searching = true
-        tableView.reloadData()
+        self.tableView.reloadData()
+//        searchPlace = placeNameArray.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+//        searching = true
+//        tableView.reloadData()
     }
 }
