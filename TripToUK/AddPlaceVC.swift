@@ -13,10 +13,18 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet var placeTypeText: UITextField!
     @IBOutlet var famousForText: UITextField!
     @IBOutlet var imageView: UIImageView!
+    
+    var selectedPlaceName = ""
+    var selectedPlaceType = ""
+    var selectedHighlights = ""
+    var selectedPicture = ""
+    var selectedLatitude = Double()
+    var selectedLongitude = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        getData()
         
         imageView.isUserInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectPicture))
@@ -56,5 +64,17 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         ac.addAction(okButton)
         self.present(ac, animated: true)
+    }
+    
+    func editActionTapped() {
+        placeNameText.text = "UK Region"
+        
+    }
+    
+    func getData() {
+        placeNameText.text = selectedPlaceName
+        placeTypeText.text = selectedPlaceType
+        famousForText.text = selectedHighlights
+        imageView.sd_setImage(with: URL(string: selectedPicture))
     }
 }

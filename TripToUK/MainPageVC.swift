@@ -178,6 +178,47 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { contextualAction, view, boolValue in
+            
+            self.chosenPlaceName = self.placeNameArray[indexPath.row]
+            self.chosenPlaceType = self.placeTypeArray[indexPath.row]
+            self.chosenHighlights = self.highlightsArray[indexPath.row]
+            self.chosenPicture = self.pictureArray[indexPath.row]
+            self.chosenLatitude = self.latitudeArray[indexPath.row]
+            self.chosenLongitude = self.longitudeArray[indexPath.row]
+            
+            self.performSegue(withIdentifier: "editSegue", sender: nil)
+            print("Edit \(self.placeNameArray[indexPath.row])")
+        }
+        
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contextualAction, view, boolValue in
+            
+            Firestore.firestore().collection("Places").document(self.placeIDArray[indexPath.row]).delete { error in
+                if error != nil {
+                    print(error?.localizedDescription ?? "Error")
+                } else {
+                    self.tableView.reloadData()
+                }
+            }
+            
+//            self.deleteAlert()
+//            print("Delete \(self.placeIDArray[indexPath.row])")
+            
+            // Add alert
+            
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 
     @objc func addNewPlaceTapped() {
         performSegue(withIdentifier: "toNewPlaceVC", sender: nil)
@@ -198,6 +239,16 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "toDetailsVC" {
             let destinationVC = segue.destination as! DetailsVC
             destinationVC.selectedPlaceID = chosenPlaceID
+            destinationVC.selectedPlaceName = chosenPlaceName
+            destinationVC.selectedPlaceType = chosenPlaceType
+            destinationVC.selectedHighlights = chosenHighlights
+            destinationVC.selectedPicture = chosenPicture
+            destinationVC.selectedLatitude = chosenLatitude
+            destinationVC.selectedLongitude = chosenLongitude
+        }
+        
+        if segue.identifier == "editSegue" {
+            let destinationVC = segue.destination as! AddPlaceVC
             destinationVC.selectedPlaceName = chosenPlaceName
             destinationVC.selectedPlaceType = chosenPlaceType
             destinationVC.selectedHighlights = chosenHighlights
@@ -240,4 +291,44 @@ extension MainPageVC: UISearchBarDelegate {
 //        searching = true
 //        tableView.reloadData()
     }
+    
+    
+//    func deleteAlert() {
+//
+//        let ac = UIAlertController(title: "Warning", message: "Do you want to delete this place?", preferredStyle: .alert)
+//        let yesButton = UIAlertAction(title: "Yes", style: .destructive) { action in
+//
+//
+//            Firestore.firestore().collection("Places"). document(PlaceModel.sharedInstance.idArray[indexpath.row]).delete { error in
+//                if error != nil {
+//                    print(error?.localizedDescription ?? "Error")
+//                } else {
+//                    self.tableView.reloadData()
+//                }
+//
+//            }
+//
+//        }
+//        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { action in
+//            self.tableView.reloadData()
+//        }
+//
+//        ac.addAction(yesButton)
+//        ac.addAction(cancelButton)
+//        present(ac, animated: true)
+//
+//
+////            placeIDArray[indexpath.row].ref?.removeValue()
+//
+////            self.tableView.beginUpdates()
+////            self.
+////            placeIDArray.remove(at: indexpath.row)
+////            tableView.deleteRows(at: [IndexPath]., with: .automatic)
+//
+//    }
+    
+            
+            
+
+    
 }
