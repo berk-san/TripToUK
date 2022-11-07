@@ -36,8 +36,6 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var chosenLatitude = Double()
     var chosenLongitude = Double()
     
-//    lazy var searchBar: UISearchBar = UISearchBar()
-//    var searchPlace = [String]()
     var searching = false
     
     override func viewDidLoad() {
@@ -200,24 +198,26 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { contextualAction, view, boolValue in
-            
-            Firestore.firestore().collection("Places").document(self.placeIDArray[indexPath.row]).delete { error in
-                if error != nil {
-                    print(error?.localizedDescription ?? "Error")
-                } else {
-                    self.tableView.reloadData()
+        let deletePlace = UIContextualAction(style: .destructive, title: "Delete") { contextualAction, view, boolValue in
+            let ac = UIAlertController(title: "Warning", message: "Are you sure you want to delete this place", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive) { action in
+                Firestore.firestore().collection("Places").document(self.placeIDArray[indexPath.row]).delete { error in
+                    if error != nil {
+                        print(error?.localizedDescription ?? "Error")
+                    } else {
+                        self.tableView.reloadData()
+                    }
                 }
             }
-            
-//            self.deleteAlert()
-//            print("Delete \(self.placeIDArray[indexPath.row])")
-            
-            // Add alert
-            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+                self.tableView.reloadData()
+            }
+            ac.addAction(yesAction)
+            ac.addAction(cancelAction)
+            self.present(ac, animated: true)
         }
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        return UISwipeActionsConfiguration(actions: [deletePlace])
     }
 
     @objc func addNewPlaceTapped() {
@@ -268,7 +268,6 @@ class MainPageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         chosenLongitude = longitudeArray[indexPath.row]
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
-
 }
 
 extension MainPageVC: UISearchBarDelegate {
@@ -287,48 +286,5 @@ extension MainPageVC: UISearchBarDelegate {
         }
         searching = true
         self.tableView.reloadData()
-//        searchPlace = placeNameArray.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
-//        searching = true
-//        tableView.reloadData()
     }
-    
-    
-//    func deleteAlert() {
-//
-//        let ac = UIAlertController(title: "Warning", message: "Do you want to delete this place?", preferredStyle: .alert)
-//        let yesButton = UIAlertAction(title: "Yes", style: .destructive) { action in
-//
-//
-//            Firestore.firestore().collection("Places"). document(PlaceModel.sharedInstance.idArray[indexpath.row]).delete { error in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "Error")
-//                } else {
-//                    self.tableView.reloadData()
-//                }
-//
-//            }
-//
-//        }
-//        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { action in
-//            self.tableView.reloadData()
-//        }
-//
-//        ac.addAction(yesButton)
-//        ac.addAction(cancelButton)
-//        present(ac, animated: true)
-//
-//
-////            placeIDArray[indexpath.row].ref?.removeValue()
-//
-////            self.tableView.beginUpdates()
-////            self.
-////            placeIDArray.remove(at: indexpath.row)
-////            tableView.deleteRows(at: [IndexPath]., with: .automatic)
-//
-//    }
-    
-            
-            
-
-    
 }

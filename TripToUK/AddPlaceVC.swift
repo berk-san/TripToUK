@@ -75,6 +75,10 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         placeNameText.text = selectedPlaceName
         placeTypeText.text = selectedPlaceType
         famousForText.text = selectedHighlights
-        imageView.sd_setImage(with: URL(string: selectedPicture))
+        if selectedPicture == "" {
+            imageView.image = UIImage(named: "select.png")
+        } else {
+            imageView.sd_setImage(with: URL(string: selectedPicture))
+        }
     }
 }
